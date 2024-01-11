@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbi6gy4kk03xt"]
 
-[ext_resource type="MeshLibrary" uid="uid://bwxibl2v6nrxi" path="res://Assets/TileModels.tres" id="1_hxcg8"]
+[ext_resource type="MeshLibrary" uid="uid://bwxibl2v6nrxi" path="res://Assets/Models/TileModels.tres" id="1_hxcg8"]
 [ext_resource type="Script" path="res://Assets/Scripts/Player.gd" id="2_k1ail"]
 
 [sub_resource type="Environment" id="Environment_37wob"]
@@ -11,11 +11,16 @@ ambient_light_energy = 4.33
 tonemap_exposure = 0.8
 ssao_enabled = true
 ssao_radius = 0.84
+ssao_intensity = 2.41
 ssao_power = 5.04537
 fog_light_color = Color(0, 0.423529, 0.639216, 1)
-volumetric_fog_enabled = true
-volumetric_fog_emission = Color(0.517647, 0.631373, 0.321569, 1)
-volumetric_fog_length = 7.0
+volumetric_fog_density = 0.0245
+volumetric_fog_emission = Color(0.533333, 0.596078, 0.227451, 1)
+volumetric_fog_length = 9.0
+adjustment_enabled = true
+adjustment_brightness = 1.1
+adjustment_contrast = 0.91
+adjustment_saturation = 1.09
 
 [node name="Cenário" type="Node3D"]
 
@@ -31,7 +36,7 @@ script = ExtResource("2_k1ail")
 cameraSpeed = 8.0
 
 [node name="PlayerCamera" type="Camera3D" parent="PlayerObject"]
-transform = Transform3D(-1, 0, 0, 0, 0.602094, 0.798425, 0, 0.798425, -0.602094, 0, 15.1631, 0)
+transform = Transform3D(-1, 0, 0, 0, 0.420862, 0.907125, 0, 0.907125, -0.420862, 0, 13.0828, 0)
 size = 37.637
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
