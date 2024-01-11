@@ -1,7 +1,7 @@
 extends Node3D
 
 # Controle de Movimentação
-var speed : float = 260
+@export var cameraSpeed : float = 4
 var direção : Vector3 = Vector3.ZERO
 var velocidade : Vector3 = Vector3.ZERO
 
@@ -34,7 +34,7 @@ func _process(delta):
 	processarInput()
 	
 	# Aplicar velocidade à direção atual
-	direção *= (speed * delta)
+	direção *= (cameraSpeed * delta)
 	
 	# Aplicar o movimento atual à velocidade
 	velocidade = (velocidade + direção) * 0.5

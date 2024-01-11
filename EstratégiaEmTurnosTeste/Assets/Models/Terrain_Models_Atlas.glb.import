@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ccvrjxo1bhemy"
-path="res://.godot/imported/Skybox.dae-ca9c480c61474dda2d2fd4adb3783a4e.scn"
+uid="uid://b0h1p0w3g7huk"
+path="res://.godot/imported/Terrain_Models_Atlas.glb-7a48806f478c2d68c4e17865f35e3a94.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Skybox.dae"
-dest_files=["res://.godot/imported/Skybox.dae-ca9c480c61474dda2d2fd4adb3783a4e.scn"]
+source_file="res://Assets/Models/Terrain_Models_Atlas.glb"
+dest_files=["res://.godot/imported/Terrain_Models_Atlas.glb-7a48806f478c2d68c4e17865f35e3a94.scn"]
 
 [params]
 
