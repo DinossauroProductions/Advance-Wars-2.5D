@@ -4,10 +4,10 @@ Projeto focado em aprendizado, com objetivo de testar gráficos misturando 3D lo
 
 # Imagens
 
+
+https://github.com/DinossauroProductions/Advance-Wars-2.5D/assets/66527786/04ad8044-a1f5-4009-933f-ef3df0a36571
+
 Render feita no Blender:
 
 ![Terrains_render](https://github.com/DinossauroProductions/Advance-Wars-2.5D/assets/66527786/456c6000-ed9e-4817-8d26-fc0f11970998)
 
-Print do jogo:
-
-![Screenshot_Jogo](https://github.com/DinossauroProductions/Advance-Wars-2.5D/assets/66527786/ad5ed3e1-e83e-4bcb-b319-0e8a1654584f)
