@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4yc006g5y52t"]
+
+[ext_resource type="Material" uid="uid://c474wrvlgl75w" path="res://Assets/Models/Materials/Material_Water_Bottom.tres" id="1_ntiol"]
+[ext_resource type="Texture2D" uid="uid://d0u5w8nibpgl2" path="res://Assets/Sprites/Water_Animation/Tex_Water_Animation.tres" id="2_062gg"]
+[ext_resource type="Material" uid="uid://dntmgnrqjxfa8" path="res://Assets/Models/Materials/Material_Water_Top.tres" id="2_inudv"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6elfj"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cfe4x"]
+resource_name = "Terrain_Models_Water_Plane_004"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": ExtResource("1_ntiol"),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 191, 255, 255, 0, 0, 254, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6elfj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmlsr"]
+resource_name = "Material.013"
+transparency = 4
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.246072)
+albedo_texture = ExtResource("2_062gg")
+roughness = 0.5
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_o4gon"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0),
+"material": ExtResource("2_inudv"),
+"name": "Material.013",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b1tnh"]
+resource_name = "Terrain_Models_Water_Plane_005"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_bmlsr"),
+"name": "Material.013",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127)
+}]
+shadow_mesh = SubResource("ArrayMesh_o4gon")
+
+[node name="Terrain_Models_Water" type="Node3D"]
+
+[node name="Water_Bottom" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.605576, 0)
+mesh = SubResource("ArrayMesh_cfe4x")
+
+[node name="Water_Top" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11804, 0)
+mesh = SubResource("ArrayMesh_b1tnh")
+skeleton = NodePath("")

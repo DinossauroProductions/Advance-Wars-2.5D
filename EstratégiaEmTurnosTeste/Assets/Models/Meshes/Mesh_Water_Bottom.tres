@@ -1,0 +1,6 @@
+[gd_resource type="PlaneMesh" load_steps=2 format=3 uid="uid://d3jmutr1j2rfb"]
+
+[ext_resource type="Material" uid="uid://c474wrvlgl75w" path="res://Assets/Models/Materials/Material_Water_Bottom.tres" id="1_kthta"]
+
+[resource]
+material = ExtResource("1_kthta")

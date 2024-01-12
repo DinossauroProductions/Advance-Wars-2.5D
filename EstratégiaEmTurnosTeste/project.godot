@@ -11,9 +11,19 @@ config_version=5
 [application]
 
 config/name="Estratégia em Turnos teste"
-run/main_scene="res://Assets/Scenes/Cenário.tscn"
+run/main_scene="res://Assets/Scenes/Overworld.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/Extra Stuff/": "gray",
+"res://Assets/Models/": "orange",
+"res://Assets/Scenes/": "yellow",
+"res://Assets/Scripts/": "blue",
+"res://Assets/Sprites/": "green"
+}
 
 [importer_defaults]
 

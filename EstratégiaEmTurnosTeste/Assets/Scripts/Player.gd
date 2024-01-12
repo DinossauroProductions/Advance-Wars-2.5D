@@ -24,8 +24,8 @@ var modoDeInput : ModoDeInput = ModoDeInput.TECLADO;
 func _ready():
 	direção = Vector3.ZERO
 	
-	if is_instance_valid(get_node("Camera")) and get_node("Camera") is Camera3D:
-		var camera_node : Camera3D = get_node("Camera")
+	if is_instance_valid(get_node("PlayerCamera")) and get_node("PlayerCamera") is Camera3D:
+		var camera_node : Camera3D = get_node("PlayerCamera")
 		camera_node.make_current()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,26 +49,28 @@ func processarInput():
 	if(modoDeInput == ModoDeInput.TECLADO):
 		
 		if(inputs[left]):
-			direção += Vector3(1, 0, 0)
+			direção += Vector3(-1, 0, 0)
 			inputs[left] = false
 			
 		if(inputs[right]):
-			direção += Vector3(-1, 0, 0)
+			direção += Vector3(1, 0, 0)
 			inputs[right] = false
 			
 		if(inputs[up]):
-			direção += Vector3(0, 0, 1)
+			direção += Vector3(0, 0, -1)
 			inputs[up] = false
 			
 		if(inputs[down]):
-			direção += Vector3(0, 0, -1)
+			direção += Vector3(0, 0, 1)
 			inputs[down] = false
-
+	
 	
 	elif(modoDeInput == ModoDeInput.JOYSTICK):
 		
 		#Implementar controles de joystick!
 		pass
+		
+	direção = direção.normalized()
 	
 
 
