@@ -20,10 +20,10 @@ func _ready():
 	var height
 	
 	if top:
-		height = 0.2
+		height = -0.8
 		multimesh.mesh = TopMesh
 	else:
-		height = -0.6
+		height = -1.6
 		multimesh.mesh = BottomMesh
 	
 

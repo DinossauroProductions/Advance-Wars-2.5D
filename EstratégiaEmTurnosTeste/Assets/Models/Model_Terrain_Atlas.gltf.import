@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c3qkumhpjm1s5"
+uid="uid://bu83isi1btxqn"
 path="res://.godot/imported/Model_Terrain_Atlas.gltf-8dca83d697d42c929604a1f08d65bfbb.scn"
 
 [deps]
@@ -17,6 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
@@ -28,7 +29,15 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Material_Terrenos": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Materials/Material_Terrenos.tres"
+}
+}
+}
 gltf/naming_version=1
-gltf/embedded_image_handling=1
+gltf/embedded_image_handling=2

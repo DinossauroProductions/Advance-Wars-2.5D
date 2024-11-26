@@ -1,7 +1,7 @@
 extends Node3D
 
 # Controle de Movimentação
-@export var cameraSpeed : float = 4
+@export var cameraSpeed : float = 20
 var direção : Vector3 = Vector3.ZERO
 var velocidade : Vector3 = Vector3.ZERO
 
@@ -86,5 +86,3 @@ func receberInput():
 		if Input.is_action_pressed("Move_down"):
 			inputs[down] = true
 		
-
-

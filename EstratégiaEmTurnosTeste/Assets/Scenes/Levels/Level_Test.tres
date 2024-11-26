@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Level_Data" load_steps=2 format=3 uid="uid://bdsgv524fcpgn"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Level_Data.gd" id="1_36sr6"]
+
+[resource]
+script = ExtResource("1_36sr6")
+sizeX = 0
+sizeY = 0
