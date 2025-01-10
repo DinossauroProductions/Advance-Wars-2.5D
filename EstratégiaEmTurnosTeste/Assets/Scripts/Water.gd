@@ -1,37 +1,45 @@
-extends MultiMeshInstance3D
+@tool
+extends Node3D
 
 @export var BottomMesh : Mesh
 @export var TopMesh: Mesh
-@export var top: bool
+@export_range(10, 10000000) var tamanhoLado: int = 300
 
+var bottomNode: MultiMeshInstance3D
+var topNode: MultiMeshInstance3D
+
+@export var buttonExecute: bool = false:
+	set = _executar_editor
+
+func _executar_editor(h):
+	buttonExecute = false
+	_ready()
 
 func _ready():
-	# Create the multimesh.
-	multimesh = MultiMesh.new()
+	
+	bottomNode = %Bottom
+	topNode = %Top
+	
+	setarMesh(topNode, TopMesh, -0.8)
+	setarMesh(bottomNode, BottomMesh, -1.6)
+
+func setarMesh(node: MultiMeshInstance3D, mesh: Mesh, height: float):
+	# Create the node.multimesh.
+	node.multimesh = MultiMesh.new()
 	
 	
 	# Set the format first.
-	multimesh.transform_format = MultiMesh.TRANSFORM_3D
+	node.multimesh.transform_format = MultiMesh.TRANSFORM_3D
 	# Then resize (otherwise, changing the format is not allowed).
-	multimesh.instance_count = 10000
+	node.multimesh.instance_count = tamanhoLado * tamanhoLado
 	# Maybe not all of them should be visible at first.
-	multimesh.visible_instance_count = 10000
+	node.multimesh.visible_instance_count = tamanhoLado * tamanhoLado
 	
-	var height
+	node.multimesh.mesh = mesh
 	
-	if top:
-		height = -0.8
-		multimesh.mesh = TopMesh
-	else:
-		height = -1.6
-		multimesh.mesh = BottomMesh
-	
-
 	# Set the transform of the instances.
-	for i in range(100):
-		for j in range(100):
+	for i in range(tamanhoLado):
+		for j in range(tamanhoLado):
 			
-			multimesh.set_instance_transform(j + i * 100, Transform3D(Basis(), 
-			Vector3((i * 2) - 100, height, (j * 2) - 100)))
-
-			
+			node.multimesh.set_instance_transform(j + i * tamanhoLado, Transform3D(Basis(), 
+			Vector3((i * 2) - tamanhoLado, height, (j * 2) - tamanhoLado)))

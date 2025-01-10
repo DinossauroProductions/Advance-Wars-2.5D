@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3041s8wnf8rl"]
+
+[ext_resource type="Material" uid="uid://b4ackiy5t8ya4" path="res://Assets/Models/Materials/Material_Selection.tres" id="1_jm0c8"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oo4mp"]
+material = ExtResource("1_jm0c8")
+
+[node name="Selection" type="MeshInstance3D"]
+mesh = SubResource("PlaneMesh_oo4mp")
+skeleton = NodePath("")

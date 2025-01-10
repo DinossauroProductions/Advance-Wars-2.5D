@@ -1,0 +1,7 @@
+[gd_resource type="PlaneMesh" load_steps=2 format=3 uid="uid://dp8ehshgpkwqf"]
+
+[ext_resource type="Material" uid="uid://bsgmywoovix0x" path="res://Assets/Models/Materials/Material_Grid_Overlay.tres" id="1_xhd86"]
+
+[resource]
+material = ExtResource("1_xhd86")
+size = Vector2(1000, 1000)

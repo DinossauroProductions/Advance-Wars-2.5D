@@ -1,5 +1,129 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsr28eiarbhqb"]
+[gd_scene load_steps=6 format=4 uid="uid://dsr28eiarbhqb"]
 
 [ext_resource type="PackedScene" uid="uid://bu83isi1btxqn" path="res://Assets/Models/Model_Terrain_Atlas.gltf" id="1_slgcy"]
+[ext_resource type="PackedScene" uid="uid://d3041s8wnf8rl" path="res://Assets/Models/selection.tscn" id="2_k5phq"]
+[ext_resource type="Material" uid="uid://gxinn0iqhqq0" path="res://Assets/Models/Materials/Material_Terrenos.tres" id="4_311lx"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b5r1r"]
+_surfaces = [{
+"aabb": AABB(-1, -2.39912, -1, 2, 3.39912, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAADAAIAAAABAAMAAwAGAAIAAwAHAAYAAAAGAAQAAAACAAYAAQAEAAUAAQAAAAQAAwAFAAcAAwABAAUABgAFAAQABgAHAAUA"),
+"name": "Material_Terrenos",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAD///////8AAAAA//8AAAAAAAD/////AAD//wAAAAAAAP//AAD//wAAAAAAAAAAAAAAAAAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vtu3i"]
+resource_name = "Model_Terrain_Atlas_Plains"
+_surfaces = [{
+"aabb": AABB(-1, -2.39912, -1, 2, 3.39912, 2),
+"attribute_data": PackedByteArray("878BgACACLz///5////+fwGA/n/zvwGA878BgP///n8AwAC8///+f/O/AYD8vwGA6IIGcQzA///w/+r/6ILNdPD/6v8MwP//DMD//7GGBnHw/+r/8P/q/7GGzXQMwP//"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AQALAAgAAQAEAAsACQASAAYACQAVABIAAAAUAA0AAAAHABQABQAOABEABQACAA4ACgAQABcACgADABAAEwAPAAwAEwAWAA8A"),
+"material": ExtResource("4_311lx"),
+"name": "Material_Terrenos",
+"primitive": 3,
+"uv_scale": Vector4(0.124988, 0.333294, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA////////AAD///////8AAP+/////////AID///////////////////+/AAD//wAA/78AAP//AAD//wAA//8AAPv/AAD//////78AAP////8AgAAA//////////8AAAAA/////wAAAAD/////AAAAAP+///8AAP///////wAA//8GgP//AAD///+/AAAAAAAA/78AAAAAAAD//wAAAAAAAP//AAAAAP///78AAAAA/////wAAAAD//wmA+H/3//+/AAABgAQA/3//f/9//78GgA4A/X/6//1//P8BwAMA+H/w//9//3//vwAA/3//P+5/7f8LgBgA/3//P/9//38QgCIA83/m//9//z/zf/L/7n/c//9//z//f/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_b5r1r")
 
 [node name="Model_Terrain_Atlas" instance=ExtResource("1_slgcy")]
+
+[node name="Selection" parent="." index="0" instance=ExtResource("2_k5phq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
+
+[node name="Mountains" parent="." index="1"]
+visible = false
+
+[node name="Plains" parent="." index="2"]
+mesh = SubResource("ArrayMesh_vtu3i")
+
+[node name="Forest" parent="." index="3"]
+visible = false
+
+[node name="Street_Straight_Horizontal" parent="." index="4"]
+visible = false
+
+[node name="Street_Straight_Vertical" parent="." index="5"]
+visible = false
+
+[node name="Street_Cross" parent="." index="6"]
+visible = false
+
+[node name="Street_Turn_Down_Left" parent="." index="7"]
+visible = false
+
+[node name="Street_Turn_Up_Right" parent="." index="8"]
+visible = false
+
+[node name="Street_Turn_Up_Left" parent="." index="9"]
+visible = false
+
+[node name="Street_T_Down" parent="." index="10"]
+visible = false
+
+[node name="Street_T_Up" parent="." index="11"]
+visible = false
+
+[node name="Bridge_Horizontal" parent="." index="12"]
+visible = false
+
+[node name="Street_T_Right" parent="." index="13"]
+visible = false
+
+[node name="Street_T_Left" parent="." index="14"]
+visible = false
+
+[node name="Street_Turn_Down_Right" parent="." index="15"]
+visible = false
+
+[node name="Bridge_Vertical" parent="." index="16"]
+visible = false
+
+[node name="Reef" parent="." index="17"]
+visible = false
+
+[node name="Shoal_Up" parent="." index="18"]
+visible = false
+
+[node name="Shoal_Right" parent="." index="19"]
+visible = false
+
+[node name="Shoal_Up_Right" parent="." index="20"]
+visible = false
+
+[node name="Shoal_Down_Right" parent="." index="21"]
+visible = false
+
+[node name="Shoal_Down_Left" parent="." index="22"]
+visible = false
+
+[node name="Shoal_Up_Left" parent="." index="23"]
+visible = false
+
+[node name="Shoal_Left" parent="." index="24"]
+visible = false
+
+[node name="Shoal_Down" parent="." index="25"]
+visible = false
+
+[node name="Shoal_Outer_Up_Right" parent="." index="26"]
+visible = false
+
+[node name="Shoal_Outer_Up_Left" parent="." index="27"]
+visible = false
+
+[node name="Shoal_Outer_Down_Left" parent="." index="28"]
+visible = false
+
+[node name="Shoal_Outer_Down_Right" parent="." index="29"]
+visible = false

@@ -1,18 +1,31 @@
+@tool
 extends Resource
 
 class_name Level_Data
 
-var sizeX : int
-var sizeY : int
+const maxSize : int = 50
+const minSize : int = 5 
 
-static var maxSize : int = 50
-static var minSize : int = 5 
+@export_range(minSize, maxSize, 1, "suffix:Tiles") var sizeX : int = minSize
+@export_range(minSize, maxSize, 1, "suffix:Tiles") var sizeY : int = maxSize
 
+@export var pathTile: String
+@export var execute_button: bool = false:
+	set = _set_execute_button
+
+func _set_execute_button(x):
+	#print('aaa')
+	execute_button = false
+	loadLevelFromString(pathTile)
+	
+	
 
 # Definido no tamanho mínimo possível
-var tiles = []
+@export var tiles: Array
 
 func loadLevelFromString(path : String):
+	
+	#print(path)
 	
 	var string = load_file(path)
 	
@@ -47,7 +60,7 @@ func loadLevelFromString(path : String):
 			tiles[i][j] = int(ids[j])
 	
 	
-func createMatrix(cols: int, rows: int):
+func createMatrix(cols: int, rows: int) -> Array:
 	var mat = []
 	for ii in range(cols):
 		var row = []
@@ -57,8 +70,9 @@ func createMatrix(cols: int, rows: int):
 	return mat
 	
 func load_file(path):
-	var file = FileAccess.open(path, FileAccess.READ)
+	var file: FileAccess = FileAccess.open(path, FileAccess.READ)
 	var content = file.get_as_text()
+	file.close()
 	return content
 	
 
